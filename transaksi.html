@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Transaksi</title>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+        <div class="row" id="transaksi">
+            <!-- The selected cake card will be dynamically added here -->
+        </div>
+    </div>
+
+    
+<div class="form-container">
+    <div class="form">
+        <span class="heading">Form</span>
+        <input placeholder="Nama" type="text" class="input">
+        <input placeholder="No Hp" id="mail" type="email" class="input">
+        <textarea placeholder="Alamat Lemgkap" rows="10" cols="30" id="message" name="message" class="textarea"></textarea>
+        <div class="button-container">
+            <a href="TokoKue.html" class="send-button">kembali</a>
+        <div class="send-button" id="pesanButton">Pesan</div>
+    </div>
+</div>
+</div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Function to display selected cake in the transaction page
+        function displaySelectedCake() {
+            const transaksiContainer = document.getElementById('transaksi');
+
+            // Retrieve cake data from the URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const description = urlParams.get('description');
+            const image = urlParams.get('image');
+
+            // Display the selected cake
+            const card = document.createElement('div');
+            card.className = 'col-md-4';
+            card.innerHTML = `
+                <div class="card">
+                    <img src="${decodeURIComponent(image)}" class="card-img-top" alt="${name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${decodeURIComponent(name)}</h5>
+                        <p class="card-text">${decodeURIComponent(description)}</p>
+                    </div>
+                </div>
+            `;
+
+            // Appending the card to the transaction container
+            transaksiContainer.appendChild(card);
+        }
+
+        function checkAddress() {
+            const confirmation = confirm("Apakah alamat sudah sesuai?");
+            if (confirmation) {
+                alert("Terima kasih! Pesanan Anda sedang diproses.");
+                alert("Jika ingin memesan harap kembali.");
+            } else {
+                alert("Silakan periksa kembali alamat Anda sebelum melanjutkan.");
+            }
+        }
+
+        // Attach click event listener to the button
+        const pesanButton = document.getElementById('pesanButton');
+        pesanButton.addEventListener('click', checkAddress);
+
+        // Display the selected cake on page load
+        displaySelectedCake();
+    </script>
+</body>
+</html>
