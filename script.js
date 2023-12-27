@@ -15,8 +15,8 @@ function Cake(name, image, description,price) {
 
 // Stack
 const cakeStack = [];
-cakeStack.push(new Cake('Molten Chocolate', 'img/MoltenChocolate.jpg', 'Jadikan hal-hal termanis terjadi dalam hidupmu','Rp 20.000'));
-cakeStack.push(new Cake('Spice Cookies', 'img/SpiceCookies.jpg', 'Setiap bagian unik di sini,karena setiap kue memiliki cerita tersendiri','Rp 12.000'));
+cakeStack.push(new Cake('Molten Chocolate', 'img/MoltenChocolate.jpg', 'Make the sweetest things happen in your life', 'Rp 20.000'));
+cakeStack.push(new Cake('Spice Cookies', 'img/SpiceCookies.jpg', 'Every piece is unique here,because each cake has its own story', 'Rp 12.000'));
 
 // Linked List
 class Node {
@@ -39,14 +39,14 @@ class CakeLinkedList {
 }
 
 const cakeList = new CakeLinkedList();
-cakeList.addCakeToList(new Cake('Red Velvet', 'img/redvelvet.jpg', 'Lupakan kalori dan berbahagialah dan Jalani hidup yang manis!','Rp 30.000'));
-cakeList.addCakeToList(new Cake('Brown Butter Stamp', 'img/brownbutterstampcookies.jpg', 'Jangan menunggu sampai terlambat,dapatkan segera','Rp 20.000'));
+cakeList.addCakeToList(new Cake('Red Velvet', 'img/redvelvet.jpg', 'Forget calories and be happy and Live a sweet life!', 'Rp 30.000'));
+cakeList.addCakeToList(new Cake('Brown Butter Stamp', 'img/brownbutterstampcookies.jpg', 'Dont wait until its too late get it immediately ', 'Rp 20.000 '));
 
 // Queue
 const cakeQueue = [];
-cakeQueue.push(new Cake('Hazelnut', 'img/hazelnutcookies.jpg', 'Setiap individu yang unik berhak mendapatkan kue yang sama spesialnya','Rp 25.000'));
-cakeQueue.push(new Cake('Ice Thumbprint', 'img/IcedThumbprint.jpg', 'Mengambil kesenangan ke tingkat berikutnya', 'Rp 20.000'));
-cakeQueue.push(new Cake('Ginger Bread', 'img/gingerbread.jpg', 'Setiap hari adalah kesempatan untuk merayakan','Rp 25.000'));
+cakeQueue.push(new Cake('Hazelnut', 'img/hazelnutcookies.jpg', 'Make Your Sweet Moments More Memorable with This!', 'Rp 25.000'));
+cakeQueue.push(new Cake('Ice Thumbprint', 'img/IcedThumbprint.jpg', 'It feels like a warm sweet and loving hug!', 'Rp 20.000'));
+cakeQueue.push(new Cake('Ginger Bread', 'img/gingerbread.jpg', 'Make your timeline more cheerful with contemporary food!', 'Rp 25.000'));
 
 // Display cakes on the webpage
 const cakeContainer = document.getElementById('cakeContainer');
